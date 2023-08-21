@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="container" prefHeight="478.0" prefWidth="910.0" spacing="8.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.forms.export.select_rev.SelectRev">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="8.0" VBox.vgrow="NEVER">
+         <children>
+            <Label text="Revisions">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldSearch" promptText="search..." HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <ListView fx:id="listViewRevs" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+      <Label fx:id="labelStatus" text="status" />
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</VBox>

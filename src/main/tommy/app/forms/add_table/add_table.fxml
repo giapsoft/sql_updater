@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.forms.add_table.AddTable">
+   <children>
+      <VBox fx:id="vBoxTableName" alignment="TOP_RIGHT">
+         <VBox.margin>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </VBox.margin>
+         <children>
+            <HBox alignment="CENTER_RIGHT" spacing="4.0">
+               <children>
+                  <Label text="Table Name" />
+                  <TextField fx:id="textFieldTableName" prefWidth="500.0" />
+               </children>
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="labelTableNameError" styleClass="text-error" text="Label">
+               <VBox.margin>
+                  <Insets right="8.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <VBox fx:id="vBoxPkColumns" alignment="TOP_RIGHT">
+         <VBox.margin>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </VBox.margin>
+         <children>
+            <HBox alignment="CENTER_RIGHT" spacing="4.0">
+               <children>
+                  <Label text="Pk Columns" />
+                  <TextField fx:id="textFieldPkColumns" prefWidth="500.0" />
+               </children>
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="labelPkColumnsError" styleClass="text-error" text="Label">
+               <VBox.margin>
+                  <Insets right="8.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <VBox fx:id="vBoxOtherColumns" alignment="TOP_RIGHT">
+         <VBox.margin>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </VBox.margin>
+         <children>
+            <HBox alignment="CENTER" spacing="4.0">
+               <children>
+                  <Label text="Other Columns" />
+                  <TextArea fx:id="textAreaOtherColumns" prefHeight="100.0" prefWidth="500.0" />
+               </children>
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="labelOtherColumnsError" styleClass="text-error" text="Label">
+               <VBox.margin>
+                  <Insets right="8.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_RIGHT" layoutX="14.0" layoutY="14.0" spacing="4.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label fx:id="labelError" styleClass="text-help" text="each column is separated by a comma ( , )" textFill="#00a405" />
+               </children>
+            </HBox>
+            <Button layoutX="226.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#submit" text="OK" />
+         </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

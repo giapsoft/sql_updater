@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.forms.app.App">
+   <children>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="975.0" stylesheets="@../../style.css">
+         <children>
+            <VBox fx:id="leftPanel" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="753.0" style="-fx-spacing: 10; -fx-padding: 10;" HBox.hgrow="NEVER">
+               <children>
+                  <Label styleClass="segment-title" text="Data Type" />
+                  <HBox fx:id="dataTypeItems" alignment="CENTER" prefHeight="23.0" prefWidth="229.0" style="-fx-spacing: 15; -fx-alignment: center-left;">
+                     <children>
+                        <RadioButton fx:id="ctrl" mnemonicParsing="false" text="Ctrl">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggleGroupDataType" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton fx:id="main" mnemonicParsing="false" text="Main" toggleGroup="$toggleGroupDataType" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </opaqueInsets>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <HBox layoutX="20.0" layoutY="93.0" prefHeight="28.0" prefWidth="209.0" style="-fx-alignment: center-left; -fx-spacing: 5;">
+                     <children>
+                        <Label maxWidth="40.0" minWidth="35.0" prefHeight="17.0" prefWidth="35.0" text="Table">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="textFieldSearchTable" prefHeight="25.0" prefWidth="129.0" promptText="search..." HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnAddTable" maxHeight="25.0" maxWidth="25.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" onMouseClicked="#showAddTableDialog" prefHeight="25.0" prefWidth="25.0" text="+" textOverrun="CLIP">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <ListView fx:id="listViewTables" onMouseClicked="#onSelectTable" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="570.0" prefWidth="0.0" />
+            <VBox fx:id="vBoxWorkingTab">
+               <children>
+                  <GridPane hgap="4.0" vgap="4.0" VBox.vgrow="SOMETIMES">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="NEVER" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints vgrow="NEVER" />
+                      <RowConstraints valignment="TOP" vgrow="ALWAYS" />
+                      <RowConstraints valignment="TOP" vgrow="ALWAYS" />
+                        <RowConstraints valignment="TOP" vgrow="ALWAYS" />
+                    </rowConstraints>
+                     <children>
+                        <Label styleClass="segment-title" stylesheets="@../../style.css" text="Selected Table:">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="78.0" styleClass="segment-title" stylesheets="@../../style.css" text="Primary keys:" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label styleClass="segment-title" stylesheets="@../../style.css" text="Other columns:" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelSelectedTable" layoutX="10.0" layoutY="18.0" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../../style.css" text="None" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelPkNames" alignment="TOP_LEFT" focusTraversable="false" layoutX="10.0" layoutY="78.0" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" stylesheets="@../../style.css" text="Empty" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelOtherColumnNames" alignment="TOP_LEFT" focusTraversable="false" layoutX="120.0" layoutY="35.0" minHeight="-Infinity" nodeOrientation="LEFT_TO_RIGHT" stylesheets="@../../style.css" text="Empty" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                     </padding>
+                  </GridPane>
+                  <HBox fx:id="hBoxWorkingActions" alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="841.0" spacing="10.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button fx:id="btnAddColumn" mnemonicParsing="false" onMouseClicked="#showAddColumnDialog" prefHeight="25.0" prefWidth="88.0" text="+ Column" HBox.hgrow="NEVER" />
+                        <Button fx:id="btnUpdateRow" layoutX="10.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#showUpdateRowDialog" prefHeight="25.0" prefWidth="85.0" text="Row" HBox.hgrow="NEVER" />
+                        <Button fx:id="btnDeleteRow" layoutX="79.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#showDeleteRowDialog" prefHeight="25.0" prefWidth="86.0" text="Row" HBox.hgrow="NEVER" />
+                        <Button fx:id="btnSearchRow" layoutX="208.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#searchRow" prefHeight="25.0" prefWidth="86.0" text="Row" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+                  <ScrollPane fx:id="scrollPaneCommitting" fitToWidth="true" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="vBoxWorkingItems" spacing="4.0">
+                           <children>
+                              <VBox fx:id="vBoxAddingCategories">
+                                 <children>
+                                    <Label styleClass="segment-title" text="Adding Categories:" />
+                                    <FlowPane fx:id="flowPaneAddingCategories" hgap="5.0" prefWrapLength="0.0" vgap="5.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox fx:id="vBoxAddingTables">
+                                 <children>
+                                    <Label styleClass="segment-title" text="Adding Tables:" />
+                                    <VBox fx:id="vBoxAddingTablesDet" alignment="CENTER_LEFT" fillWidth="false" spacing="4.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox fx:id="vBoxAddingColumns">
+                                 <children>
+                                    <Label styleClass="segment-title" text="Adding Columns:" />
+                                    <VBox fx:id="vBoxAddingColumnsDet" alignment="CENTER_LEFT" fillWidth="false" spacing="4.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </VBox>
+                              <VBox fx:id="vBoxUpdatingRows">
+                                 <children>
+                                    <Label styleClass="segment-title" text="Updating Rows:" />
+                                    <VBox fx:id="vBoxUpdatingRowsDet" alignment="CENTER_LEFT" fillWidth="false" spacing="4.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox fx:id="vBoxDeletingRows">
+                                 <children>
+                                    <Label styleClass="segment-title" text="Deleting Rows:" />
+                                    <VBox fx:id="vBoxDeletingRowsDet" alignment="CENTER_LEFT" fillWidth="false" spacing="4.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="4.0" left="4.0" right="4.0" top="8.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <HBox fx:id="hBoxCommitting" alignment="CENTER" prefHeight="52.0" prefWidth="880.0" spacing="10.0" VBox.vgrow="NEVER">
+                     <children>
+                        <TextArea fx:id="textAreaCommitMessage" prefHeight="42.0" prefWidth="469.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextArea>
+                        <Button fx:id="buttonCommit" maxWidth="109.0" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#commit" prefHeight="39.0" text="COMMIT" HBox.hgrow="NEVER" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="8.0" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="btnOpenWorkingDir" mnemonicParsing="false" onMouseClicked="#openWorkingDir" text="Working Dir" />
+            <Label fx:id="labelWorkingDir" text="Label" />
+            <Button fx:id="btnOpenSvnDir" mnemonicParsing="false" onMouseClicked="#openSvnDir" text="SVN Dir" />
+            <Label fx:id="labelSvnDir" text="Label" />
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

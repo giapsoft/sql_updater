@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="8.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.forms.export.Export">
+   <children>
+      <VBox fx:id="vBoxDatabases" prefHeight="298.0" prefWidth="600.0" spacing="4.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="23.0" prefWidth="600.0" spacing="5.0" VBox.vgrow="NEVER">
+               <children>
+                  <CheckBox fx:id="checkBoxSelectAll" mnemonicParsing="false" text="Databases" />
+                  <Button fx:id="buttonAddDb" mnemonicParsing="false" onMouseClicked="#addDbDialog" text="+" />
+               </children>
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </HBox>
+            <ListView fx:id="listViewDatabases" stylesheets="@../../style.css" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+      <VBox spacing="8.0" VBox.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="4.0" VBox.vgrow="NEVER">
+               <children>
+                  <Button fx:id="btnUpdateToRev" mnemonicParsing="false" onMouseClicked="#updateToRev" prefHeight="25.0" prefWidth="300.0" text="Update to Revision" />
+                  <TextField fx:id="textFieldRev" prefHeight="25.0" prefWidth="159.0" />
+                  <Button fx:id="btnSelectRev" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#selectRev" prefHeight="25.0" prefWidth="41.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" spacing="4.0">
+               <children>
+                  <Button fx:id="btnUpdateToLatest" mnemonicParsing="false" onMouseClicked="#updateToLatest" prefHeight="25.0" prefWidth="300.0" text="Update to Latest Revision" />
+                  <Label fx:id="labelLastRev" text="checking..." />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" VBox.vgrow="NEVER">
+               <children>
+                  <Label fx:id="labelStatus" text="status..." />
+                  <Button fx:id="buttonViewErrorsFile" mnemonicParsing="false" onMouseClicked="#openErrors" text="view errors file" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</VBox>

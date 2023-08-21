@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="8.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.forms.export.add_db.AddDb">
+   <children>
+      <Label text="Database Setup">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" spacing="4.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="80.0" text="url" />
+            <TextField fx:id="textFieldUrl" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" spacing="4.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="80.0" text="user" textAlignment="RIGHT" />
+            <TextField fx:id="textFieldUser" prefHeight="25.0" HBox.hgrow="ALWAYS" />
+            <Label alignment="CENTER_RIGHT" prefWidth="80.0" text="password" />
+            <TextField fx:id="textFieldPassword" prefHeight="25.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="18.0" layoutY="94.0" spacing="4.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="80.0" text="last revision" textAlignment="RIGHT" />
+            <TextField fx:id="textFieldLastRev" prefHeight="25.0" HBox.hgrow="ALWAYS" />
+            <CheckBox fx:id="checkBoxCtrl" mnemonicParsing="false" prefHeight="17.0" prefWidth="232.0" text="isCtrl" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="btnSubmit" mnemonicParsing="false" onMouseClicked="#submit" prefHeight="25.0" prefWidth="172.0" text="ADD" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+   </padding>
+</VBox>
